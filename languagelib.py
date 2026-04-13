@@ -121,7 +121,7 @@ def getSubstring(string, start, end):
     result = ""
     if (start >= end):
         return result
-    for i in range(start,end):
+    for i in range(int(start),int(end)):
         if ((i < 0) or (i >= len(string))):
             break
         result += str(string[i])
@@ -206,14 +206,14 @@ class Language:
 
     def getRandomInteger(self, mode, minimum, maximum):
         self.handleRandomState(mode)
-        return random.randint(minimum,maximum)
+        return random.randint(int(minimum),int(maximum))
 
     def getRandomFloat(self, mode, minimum, maximum):
         self.handleRandomState(mode)
-        return random.uniform(minimum,maximum)
+        return random.uniform(float(minimum),float(maximum))
 
     def getShuffledLetters(self):
-        letters = range(0,26)
+        letters = list(range(0,26))
         for i in range(25,-1,-1):
             index = self.getRandomInteger(0,0,i)
             temp = letters[index]
