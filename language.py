@@ -9,5 +9,5 @@ if (len(directory) == 0):
 if not (directory[len(directory)-1:] == "/"):
     directory += "/"
 directory += "data/"
-languageInstance = languagelib.Language(hash(str(languageName)),directory)
+languageInstance = languagelib.Language(languagelib.getStringHash(str(languageName)),directory)
 print(str(languageInstance.translateSentence(str(sentence))))
